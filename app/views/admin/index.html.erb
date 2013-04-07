@@ -3,3 +3,16 @@
 </ul>
 </div>
 </div>
+
+<% unless @family %>
+  <div class="hero-unit">
+     <h2> You do not belong to any family </h2>
+     <p> You can ask one of your family members to add you to your family or you can create your own family. </p>
+     <p>
+        <a class="btn btn-primary btn-large" href="/admin/new"> Create your family </a>
+     </p>
+  </div>
+  
+<% else %>
+  
+<% end %>
