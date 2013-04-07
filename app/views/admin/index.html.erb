@@ -14,5 +14,14 @@
   </div>
   
 <% else %>
-  
+     <h2> Family members </h2>
+     <table class="table" align="center">
+	<tr><td>Name</td><td> Email </td></tr>
+        <% @users.each do |user| %>
+	    <tr>
+	       <td><%= user.name %></td>
+	       <td><%= user.email %></td>
+	    </tr>
+        <% end %>
+     </table>
 <% end %>
