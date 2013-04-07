@@ -9,10 +9,14 @@ class AdminController < ApplicationController
      end
   end
   
-  def new
+  def show
      family = Family.create!
      new_family = family.id
      current_user.update_attributes({:family => family}, :without_protection => true)
      redirect_to :admin_index, :alert => 'Family created!'
+  end
+  
+  def new
+     
   end
 end

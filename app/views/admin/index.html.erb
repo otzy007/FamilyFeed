@@ -3,12 +3,13 @@
      <h2> You do not belong to any family </h2>
      <p> You can ask one of your family members to add you to your family or you can create your own family. </p>
      <p>
-        <a class="btn btn-primary btn-large" href="/admin/new"> Create your family </a>
+        <a class="btn btn-primary btn-large" href="/admin/show"> Create your family </a>
      </p>
   </div>
   
 <% else %>
      <h2> Family members </h2>
+     <%= link_to "Add member", :action => 'new', :class => 'btn btn-primary' %>
      <table class="table" align="center">
 	<tr><td>Name</td><td> Email </td></tr>
         <% @users.each do |user| %>
