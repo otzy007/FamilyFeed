@@ -9,7 +9,7 @@
   
 <% else %>
      <h2> Family members </h2>
-     <%= link_to "Add member", :action => 'new', :class => 'btn btn-primary' %>
+     <div align="right"><%= link_to "Add member", new_admin_path, :class => 'btn btn-primary' %></div><br />
      <table class="table" align="center">
 	<tr><td>Name</td><td> Email </td></tr>
         <% @users.each do |user| %>
