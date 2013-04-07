@@ -16,6 +16,7 @@
 	    <tr>
 	       <td><%= user.name %></td>
 	       <td><%= user.email %></td>
+	       <td><%= link_to "Remove User", admin_path(user.id), :method => :delete, :confirm => "Are you sure?" %>
 	    </tr>
         <% end %>
      </table>
