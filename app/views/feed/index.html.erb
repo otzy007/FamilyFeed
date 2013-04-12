@@ -1,1 +1,9 @@
 <div align='center'><%= render 'form' %></div>
+<br />
+
+<div align='center' class='stream-container'>
+<% @posts.each do |p| %>
+   <b><%= p[:user].name %></b><br />
+   <%= p[:text] %> <br />
+<% end %>
+</div>
