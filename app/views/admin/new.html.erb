@@ -1,0 +1,6 @@
+<h2> Add an existing user to your family </h2>
+
+<%= form_tag({:action => 'create'}, :method => :post) %>
+<%= label :email, 'Email' %>
+<%= text_field :users, 'email' %>
+<%= submit_tag 'Add User' %>
