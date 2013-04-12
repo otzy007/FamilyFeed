@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class FeedController < ApplicationController
    before_filter :authenticate_user!
    
    layout 'homepage'

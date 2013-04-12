@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   belongs_to :family
+  has_many :posts
+  has_many :calendars, :through => :posts
+  has_many :todos, :through => :posts
 end

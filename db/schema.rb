@@ -11,10 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407125747) do
+ActiveRecord::Schema.define(:version => 20130412071554) do
+
+  create_table "calendars", :force => true do |t|
+    t.datetime "date"
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "families", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "calendar_id"
+    t.integer  "todo_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "todos", :force => true do |t|
+    t.string   "type"
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.string   "status"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
