@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412071554) do
+ActiveRecord::Schema.define(:version => 20130412095607) do
 
   create_table "calendars", :force => true do |t|
     t.datetime "date"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130412071554) do
     t.integer  "post_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "family_id"
   end
 
   create_table "families", :force => true do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130412071554) do
     t.integer  "todo_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "family_id"
   end
 
   create_table "todos", :force => true do |t|
@@ -45,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20130412071554) do
     t.string   "status"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "family_id"
   end
 
   create_table "users", :force => true do |t|

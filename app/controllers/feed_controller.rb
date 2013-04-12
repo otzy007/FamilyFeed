@@ -6,4 +6,10 @@ class FeedController < ApplicationController
    def index
       
    end
+   
+   def create
+      post = params[:feed][:post]
+      current_user.posts.create :text => post, :family => current_user.family
+      redirect_to :feed_index, :alert => post
+   end
 end
