@@ -8,5 +8,5 @@ class Todo < ActiveRecord::Base
   validates_presence_of :type
   validates_presence_of :text
   validates_presence_of :status
-  validates_presence_of :family
+
 end

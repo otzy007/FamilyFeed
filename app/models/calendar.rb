@@ -5,6 +5,6 @@ class Calendar < ActiveRecord::Base
   
   validates_presence_of :date
   validates_presence_of :user
-  validates_presence_of :family
+
 #   validates_presence_of :post
 end

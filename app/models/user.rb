@@ -13,4 +13,5 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :calendars, :through => :posts
   has_many :todos, :through => :posts
+  has_many :checkins, :through => :posts
 end
