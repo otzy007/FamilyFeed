@@ -1,6 +1,9 @@
-<h2> Add an existing user to your family </h2>
-
-<%= form_tag({:action => 'create'}, :method => :post) %>
-<%= label :email, 'Email' %>
-<%= text_field :users, 'email' %>
-<%= submit_tag 'Add User' %>
+<div class="hero-unit">
+   <h2> Add an existing user to your family </h2>
+   <p> In order to add someone to your family he first has to register and than you can add him by the email address used to register.</p><p>
+   <%= form_tag({:action => 'create'}, :method => :post) %>
+   <%= label :email, 'Email' %>
+   <%= text_field :users, 'email' %>
+   </p><p>
+   <%= submit_tag 'Add User', :class => 'btn' %></p>
+</div>
