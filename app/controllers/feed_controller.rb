@@ -8,7 +8,7 @@ class FeedController < ApplicationController
       
       if current_user.family
 	 current_user.family.posts.collect do |u|
-	    @posts << {:user => u.user, :text => u.text}
+	    @posts << {:user => u.user, :text => u.text, :date => u.created_at}
 	 end
       else
 	 current_user.posts.collect do |u|
