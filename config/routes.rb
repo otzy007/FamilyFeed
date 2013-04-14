@@ -7,7 +7,8 @@ FamilyFeed::Application.routes.draw do
   # first created -> highest priority.
   resources :admin
   resources :feed
-#   match 'admin/create_family' => 'admin#create_family'
+  resources :comment
+  #   match 'admin/create_family' => 'admin#create_family'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

@@ -5,12 +5,14 @@ class FeedController < ApplicationController
       @posts = []
       
       if current_user.family
-	 current_user.family.posts.collect do |u|
-	    @posts << {:user => u.user, :text => u.text, :date => u.created_at, :comments => u.comments}
+	 current_user.family.posts.collect do |p|
+	    @posts << {:user => p.user, :text => p.text, :date => p.created_at,
+	               :comments => p.comments, :id => p.id}
 	 end
       else
 	 current_user.posts.collect do |u|
-	    @posts << {:user => u.user, :text => u.text}
+	    @posts << {:user => p.user, :text => p.text, :date => p.created_at,
+	               :comments => p.comments, :id => p.id}
 	 end
       end
    end

@@ -8,6 +8,7 @@
    <b><%= p[:user].name %></b><br />
    <%= p[:text] %> <br />
    <p><%= p[:date]  %></p>
+   <%= link_to 'Comment', new_comment_path(:post => p[:id]), :remote => true %> 
    <% if p[:comments] != [] %>
       <p style = 'margin-left:5em;' >
       <% p[:comments].each do |c| %>
@@ -17,5 +18,6 @@
       <% end %>
       </p>
    <% end %>
+   <div class="new-comment" id="<%= "new-c#{p[:id]}" %>"> </div>
 <% end %>
 </div>
