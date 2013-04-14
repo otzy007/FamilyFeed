@@ -8,5 +8,14 @@
    <b><%= p[:user].name %></b><br />
    <%= p[:text] %> <br />
    <p><%= p[:date]  %></p>
+   <% if p[:comments] != [] %>
+      <p style = 'margin-left:5em;' >
+      <% p[:comments].each do |c| %>
+	 <b><%= c.user.name %></b><br />
+	 <%= c.text %> <br />
+	 <p><%= c.created_at  %></p>
+      <% end %>
+      </p>
+   <% end %>
 <% end %>
 </div>
