@@ -1,4 +1,24 @@
 FamilyFeed::Application.routes.draw do
+  get "map/index"
+
+  get "map/show"
+
+  get "todo/index"
+
+  get "todo/new"
+
+  get "todo/create"
+
+  get "todo/update"
+
+  get "todo/destroy"
+
+  get "calendar/index"
+
+  get "calendar/new"
+
+  get "calendar/edit"
+
   get "admin/index"
 
   devise_for :users
