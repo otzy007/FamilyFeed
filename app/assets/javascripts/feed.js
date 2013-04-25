@@ -1,3 +1,17 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+var x=document.getElementById("alert");
+
+function getLocation()
+{
+  if (navigator.geolocation && document.getElementById('feed_checkin').checked)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else {x.innerHTML="Geolocation is not supported by this browser.";}
+}
+  
+function showPosition(position)
+{
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;	
+}
+  

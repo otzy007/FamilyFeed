@@ -1,3 +1,8 @@
 <%= form_tag({:action => 'create'}, :method => :post) %>
 <%= text_area :feed, 'post', :rows => 2, :cols => 240 %>
 <%= submit_tag 'Post', :class => 'btn' %>
+<br />
+<div style="white-space:nowrap;">
+<%= check_box :feed, "checkin", :onclick => "getLocation()" %>
+Check-in
+</div>
