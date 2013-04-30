@@ -18,6 +18,16 @@ class TodoController < ApplicationController
   end
 
   def update
+     todo = Todo.find_by_id params[:id]
+     oldstatus = todo.status
+     
+     if oldstatus == 'new'
+	todo.update_attribute :status, 'done'
+     elsif oldstatus == 'done'
+	todo.update_attribute :status, 'new'
+     end
+     
+     redirect_to :todo_index
   end
   
   def destroy

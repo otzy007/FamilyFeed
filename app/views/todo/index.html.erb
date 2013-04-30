@@ -11,7 +11,7 @@
 	 <li class="task">
 	    <div class="row-fluid">
 	       <div class="task-checkbox">
-		  <%= check_box_tag "new", task.id, false, :class => 'task-checkbox' %>
+		  <%= link_to (check_box_tag "new", task.id, false, :class => 'task-checkbox'), todo_path(task.id), :method => :put %>
 	       </div>
 	       <div class="task-text" >
 		  <%= task.text %>
@@ -29,7 +29,7 @@
 	 <li class="task">
 	    <div class="row-fluid">
 	       <div class="task-checkbox">
-		  <%= check_box_tag "new", task.id, true, :class => 'task-checkbox' %>
+		  <%= link_to (check_box_tag "new", task.id, true, :class => 'task-checkbox'), todo_path(task.id), :method => :put %>
 	       </div>
 	       <div class="task-text" >
 		  <%= task.text %>
