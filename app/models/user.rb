@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   
   belongs_to :family
   has_many :posts
-  has_many :calendars, :through => :posts
-  has_many :todos, :through => :posts
+  has_many :calendars
+  has_many :todos 
   has_many :checkins, :through => :posts
   has_many :comments, :through => :posts
 end

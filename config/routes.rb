@@ -7,12 +7,6 @@ FamilyFeed::Application.routes.draw do
 
   get "todo/new"
 
-  get "todo/create"
-
-  get "todo/update"
-
-  get "todo/destroy"
-
   get "calendar/index"
 
   get "calendar/new"
@@ -28,6 +22,8 @@ FamilyFeed::Application.routes.draw do
   resources :admin
   resources :feed
   resources :comment
+  resources :todo
+  resources :calendar
   #   match 'admin/create_family' => 'admin#create_family'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

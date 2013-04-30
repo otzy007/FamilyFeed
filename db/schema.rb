@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414105154) do
+ActiveRecord::Schema.define(:version => 20130425154548) do
 
   create_table "calendars", :force => true do |t|
     t.datetime "date"
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(:version => 20130414105154) do
   end
 
   create_table "todos", :force => true do |t|
-    t.string   "type"
     t.text     "text"
     t.integer  "user_id"
     t.integer  "post_id"
