@@ -31,5 +31,8 @@ class TodoController < ApplicationController
   end
   
   def destroy
+     Todo.find_by_id(params[:id]).destroy
+     
+     redirect_to :todo_index
   end
 end

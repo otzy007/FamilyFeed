@@ -15,8 +15,14 @@
 	float: left;
      }
      .task-text {
-      margin-left: 40px;
-      margin-top: 5px;
+	margin-left: 40px;
+        margin-top: 5px;
+
+     
+      .task-destroy {
+	 float: right;
+	 margin-top: -3px;
+      }
      }
    }
 }
