@@ -2,6 +2,8 @@ class TodoController < ApplicationController
   before_filter :authenticate_user!
   
   def index
+     @new = Todo.find_all_by_status 'new'
+     @done = Todo.find_all_by_status 'done'
   end
 
   def new

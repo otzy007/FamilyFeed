@@ -1,4 +1,42 @@
 <%= render :partial => 'feed/menu' %>
-<h3>TODO</h3>
 
-<%= render 'form' %>
+
+<div class="add-task">
+   <%= render 'form' %>
+</div>
+
+<div class="tasks">
+   <ul class="new-tasks unstyled">
+      <% @new.each do |task| %>
+	 <li class="task">
+	    <div class="row-fluid">
+	       <div class="task-checkbox">
+		  <%= check_box_tag "new", task.id, false, :class => 'task-checkbox' %>
+	       </div>
+	       <div class="task-text" >
+		  <%= task.text %>
+	       </div>
+	    </div>
+	    </li>
+      <% end %>
+   </ul>
+</div>
+
+<h3 style="margin-left:10px;">Done</h3>
+<div class="tasks">
+   <ul class="new-tasks unstyled">
+      <% @done.each do |task| %>
+	 <li class="task">
+	    <div class="row-fluid">
+	       <div class="task-checkbox">
+		  <%= check_box_tag "new", task.id, true, :class => 'task-checkbox' %>
+	       </div>
+	       <div class="task-text" >
+		  <%= task.text %>
+	       </div>
+	    </div>
+	    </li>
+      <% end %>
+   </ul>
+</div>
+
