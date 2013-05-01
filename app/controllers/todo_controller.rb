@@ -2,8 +2,8 @@ class TodoController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-     @new = Todo.find_all_by_status 'new'
-     @done = Todo.find_all_by_status 'done'
+     @new = Todo.find_all_by_status_and_family_id 'new', current_user.family.id
+     @done = Todo.find_all_by_status_and_family_id 'done', current_user.family.id
   end
 
   def new
@@ -18,7 +18,7 @@ class TodoController < ApplicationController
   end
 
   def update
-     todo = Todo.find_by_id params[:id]
+     todo = Todo.find_by_id_and_family_id params[:id], current_user.family.id 
      oldstatus = todo.status
      
      if oldstatus == 'new'
@@ -31,7 +31,7 @@ class TodoController < ApplicationController
   end
   
   def destroy
-     Todo.find_by_id(params[:id]).destroy
+     Todo.find_by_id_and_family_id(params[:id], current_user.family.id).destroy
      
      redirect_to :todo_index
   end
