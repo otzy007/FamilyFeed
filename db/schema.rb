@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130501192024) do
+ActiveRecord::Schema.define(:version => 20130501193111) do
 
   create_table "calendars", :force => true do |t|
     t.datetime "date"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130501192024) do
     t.integer  "post_id"
     t.float    "longitude"
     t.float    "latitude"
+    t.boolean  "gmaps"
   end
 
   create_table "comments", :force => true do |t|
