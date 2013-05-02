@@ -1,4 +1,6 @@
 <%= form_tag({:action => 'create'}, :method => :post) %>
+<%= hidden_field :feed, 'longitude' %>
+<%= hidden_field :feed, 'latitude' %>
 <%= text_area :feed, 'post', :rows => 2, :cols => 240 %>
 <%= submit_tag 'Post', :class => 'btn' %>
 <br />
