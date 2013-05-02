@@ -10,7 +10,8 @@ class Checkin < ActiveRecord::Base
   acts_as_gmappable
 
   def gmaps4rails_address
-     "#{self.street}, #{self.city}, #{self.country}" 
+     where = Gmaps4rails.places latitude, longitude, 'AIzaSyBuvYB3BBl-wa8F8Y4BqMT_Pn4hsSq_2dc', nil, 20
+     "#{where[0][:name]}, #{where[0][:full_data]['vicinity'].force_encoding("iso-8859-1")}" 
   end
   
   def gmaps4rails_infowindow

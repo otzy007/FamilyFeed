@@ -1,7 +1,4 @@
 FamilyFeed::Application.routes.draw do
-  get "map/index"
-
-  get "map/show"
 
   get "todo/index"
 
@@ -24,7 +21,11 @@ FamilyFeed::Application.routes.draw do
   resources :comment
   resources :todo
   resources :calendar
-  resources :map
+  resources :map do
+     member do
+	get 'show_all'
+     end
+  end
   #   match 'admin/create_family' => 'admin#create_family'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

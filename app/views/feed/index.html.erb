@@ -7,7 +7,10 @@
 <% @posts.each do |p| %>
    <b><%= p[:user].name %></b><br />
    <%= p[:text].html_safe %> <br />
-   <p><%= p[:date]  %></p>
+   <div><small><% if p[:checkin] %>
+      near <%= link_to p[:checkin].gmaps4rails_address, map_path(p[:checkin].id) %>, 
+   <% end %>
+   <%= p[:date]  %></small></div>
    <%= link_to 'Comment', new_comment_path(:post => p[:id]), :remote => true %> 
    <% if p[:comments] != [] %>
       

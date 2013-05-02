@@ -7,12 +7,12 @@ class FeedController < ApplicationController
       if current_user.family
 	 current_user.family.posts.order('created_at DESC').each do |p|
 	    @posts << {:user => p.user, :text => p.text, :date => p.created_at,
-	               :comments => p.comments, :id => p.id}
+	               :comments => p.comments, :id => p.id, :checkin => p.checkin}
 	 end
       else
 	 current_user.posts.order('created_at DESC').each do |u|
 	    @posts << {:user => p.user, :text => p.text, :date => p.created_at,
-	               :comments => p.comments, :id => p.id}
+	               :comments => p.comments, :id => p.id, :checkin => p.checkin}
 	 end
       end
    end
