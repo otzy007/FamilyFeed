@@ -11,9 +11,11 @@ class TodoController < ApplicationController
 
   def create
      post = params[:todo][:text]
-     p post
-     current_user.todos.create :text => post, :family => current_user.family, :status => 'new'
-      
+
+     todo = current_user.todos.create :text => post, :family => current_user.family, :status => 'new'
+     current_user.posts.create :text => "<small>#{current_user.name} added <b>#{post}</b> to the <a href='/todo'>TODO list</a></small>", 
+	   :family => current_user.family, :todo => todo
+     
      redirect_to :todo_index
   end
 
@@ -23,8 +25,12 @@ class TodoController < ApplicationController
      
      if oldstatus == 'new'
 	todo.update_attribute :status, 'done'
+	current_user.posts.create :text => "<small>#{current_user.name} finished <b>#{todo.text}</b> from the <a href='/todo'>TODO list</a></small>",
+	      :family => current_user.family
      elsif oldstatus == 'done'
 	todo.update_attribute :status, 'new'
+	current_user.posts.create :text => "<small>#{current_user.name} reopened <b>#{todo.text}</b> on the <a href='/todo'>TODO list</a></small>",
+	      :family => current_user.family
      end
      
      redirect_to :todo_index

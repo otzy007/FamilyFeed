@@ -6,7 +6,7 @@
 <div align='center' class='stream-container'>
 <% @posts.each do |p| %>
    <b><%= p[:user].name %></b><br />
-   <%= p[:text] %> <br />
+   <%= p[:text].html_safe %> <br />
    <p><%= p[:date]  %></p>
    <%= link_to 'Comment', new_comment_path(:post => p[:id]), :remote => true %> 
    <% if p[:comments] != [] %>
