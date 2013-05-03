@@ -4,17 +4,18 @@
 <br />
 
 <div align='center' class='stream-container'>
+<%= paginate @posts %>
 <% @posts.each do |p| %>
-   <b><%= p[:user].name %></b><br />
-   <%= p[:text].html_safe %> <br />
-   <div><small><% if p[:checkin] %>
-      near <%= link_to p[:checkin].gmaps4rails_address, map_path(p[:checkin].id) %>, 
+   <b><%= p.user.name %></b><br />
+   <%= p.text.html_safe %> <br />
+   <div><small><% if p.checkin %>
+      near <%= link_to p.checkin.gmaps4rails_address, map_path(p.checkin.id) %>, 
    <% end %>
-   <%= p[:date]  %></small></div>
-   <%= link_to 'Comment', new_comment_path(:post => p[:id]), :remote => true %> 
-   <% if p[:comments] != [] %>
+   <%= p.created_at  %></small></div>
+   <%= link_to 'Comment', new_comment_path(:post => p.id), :remote => true %> 
+   <% if p.comments != [] %>
       
-      <% p[:comments].each do |c| %>
+      <% p.comments.each do |c| %>
 	 <p style = 'margin-left:5em;' >
 	 <b><%= c.user.name %></b><br />
 	 <%= c.text %> <br />
@@ -22,6 +23,6 @@
 	 </p>
       <% end %>
    <% end %>
-   <div class="new-comment" id="<%= "new-c#{p[:id]}" %>"> </div>
+   <div class="new-comment" id="<%= "new-c#{p.id}" %>"> </div>
 <% end %>
 </div>
