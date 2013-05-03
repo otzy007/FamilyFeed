@@ -16,6 +16,12 @@ class FeedController < ApplicationController
 # 	               :comments => p.comments, :id => p.id, :checkin => p.checkin}
 # 	 end
       end
+      
+      respond_to do |format|
+	 format.js
+	 format.html # index.html.erb
+	 format.xml  { render :xml => @posts }
+      end
    end
    
    def create

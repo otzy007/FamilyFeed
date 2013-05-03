@@ -1,0 +1,20 @@
+<div class="post">
+   <b><%= post.user.name %></b><br />
+   <%= post.text.html_safe %> <br />
+   <div><small><% if post.checkin %>
+      near <%= link_to post.checkin.gmaps4rails_address, map_path(post.checkin.id) %>, 
+   <% end %>
+   <%= post.created_at  %></small></div>
+   <%= link_to 'Comment', new_comment_path(:post => post.id), :remote => true %> 
+   <% if post.comments != [] %>
+      
+      <% post.comments.each do |c| %>
+	 <p style = 'margin-left:5em;' >
+	 <b><%= c.user.name %></b><br />
+	 <%= c.text %> <br />
+	 <p><%= c.created_at  %></p>
+	 </p>
+      <% end %>
+   <% end %>
+   <div class="new-comment" id="<%= "new-c#{post.id}" %>"> </div>
+</div>
