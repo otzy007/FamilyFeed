@@ -31,7 +31,7 @@ class FeedController < ApplicationController
       
       checkin = nil
       checkin = Checkin.create :family => current_user.family, :longitude => longitude.to_f, :latitude => latitude.to_f,
-	    :gmaps => true, :user => current_user if longitude
+	    :gmaps => true, :user => current_user if (longitude && longitude != 'bau')
       
       current_user.posts.create :text => post, :family => current_user.family, :checkin => checkin
       redirect_to :feed_index
