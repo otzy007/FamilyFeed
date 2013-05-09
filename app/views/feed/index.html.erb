@@ -2,9 +2,9 @@
 
 <div align='center'><%= render 'form' %></div>
 <br />
-<div class="todo mrm">
+<div>
    <div class="span4">
-      <ul>
+      <div class="todo mrm" style="background-color:white"><ul>
 	 <li class="todo-content">
 	    <div class="icon-tasks"></div>
 	    <%= link_to Todo, :todo_index, :class => 'todo-name' %>
@@ -17,9 +17,8 @@
 	    <div class="icon-plane"></div>
 	    <%= link_to 'Map', :map_index, :class => 'todo-name' %>
 	 </li>
-      </ul>
+      </ul></div>
    </div>
-   <div class="span8">
    <script type="text/javascript">
    (function() {
    var page = 1,
