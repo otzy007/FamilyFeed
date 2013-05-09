@@ -7,10 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar">
+<div class="navbar navbar-inverse">
 <div class="navbar-inner">
+<div class="container">
+<div class="nav-collapse collapse">
 <a class="brand" href="/">FamilyFeed</a>
 <%= yield :menu %>
+</div>
+</div>
 </div>
 </div>
 <%= yield %>
