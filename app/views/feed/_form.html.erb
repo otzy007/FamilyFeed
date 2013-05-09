@@ -2,7 +2,7 @@
 <%= hidden_field :feed, 'longitude', :value => 'bau' %>
 <%= hidden_field :feed, 'latitude' %>
 <%= text_area :feed, 'post', :rows => 2, :cols => 240 %>
-<%= submit_tag 'Post', :class => 'btn' %>
+<%= submit_tag 'Post', :class => 'btn btn-large btn-primary' %>
 <br />
 <div style="white-space:nowrap;">
 <%= check_box :feed, "checkin", :onclick => "getLocation()" %>
