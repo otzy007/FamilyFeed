@@ -13,7 +13,7 @@ class CommentController < ApplicationController
       post = params[:post]
       p post
       
-      current_user.posts.find_by_id(post).comments.create :text => comment, :user => current_user
+      current_user.family.posts.find_by_id(post).comments.create :text => comment, :user => current_user
       
       redirect_to :feed_index
    end
