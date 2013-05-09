@@ -1,5 +1,5 @@
 <div class="post">
-   <b><div class='icon-user'></div><%= "  " + post.user.name %></b><br />
+   <b><div class='icon-user'></div><%= link_to "  " + post.user.name, show_all_map_path(post.user.id) %></b><br />
    <%= post.text.html_safe %> <br />
    <div class="date"><% if post.checkin %>
       near <%= link_to post.checkin.gmaps4rails_address, map_path(post.checkin.id) %>, 
