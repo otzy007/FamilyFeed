@@ -2,40 +2,59 @@
 
 <div align='center'><%= render 'form' %></div>
 <br />
-<script type="text/javascript">
-(function() {
-  var page = 1,
-      loading = false;
+<div class="todo mrm">
+   <div class="span4">
+      <ul>
+	 <li class="todo-content">
+	    <div class="icon-tasks"></div>
+	    <%= link_to Todo, :todo_index, :class => 'todo-name' %>
+	 </li>
+	 <li class="todo-content">
+	    <div class="icon-calendar"></div>
+	    <%= link_to Calendar, :calendar_index, :class => 'todo-name' %>
+	 </li>
+	 <li class="todo-content">
+	    <div class="icon-plane"></div>
+	    <%= link_to 'Map', :map_index, :class => 'todo-name' %>
+	 </li>
+      </ul>
+   </div>
+   <div class="span8">
+   <script type="text/javascript">
+   (function() {
+   var page = 1,
+	 loading = false;
 
-  function nearBottomOfPage() {
-    return $(window).scrollTop() > $(document).height() - $(window).height() - 200;
-  }
+   function nearBottomOfPage() {
+      return $(window).scrollTop() > $(document).height() - $(window).height() - 200;
+   }
 
-  $(window).scroll(function(){
-    if (loading) {
-      return;
-    }
+   $(window).scroll(function(){
+      if (loading) {
+	 return;
+      }
 
-    if(nearBottomOfPage()) {
-      loading=true;
-      page++;
-      $.ajax({
-        url: '/feed?page=' + page,
-        type: 'get',
-        dataType: 'script',
-        success: function() {
-          $(window).sausage('draw');
-          loading=false;
-        }
-      });
-    }
-  });
+      if(nearBottomOfPage()) {
+	 loading=true;
+	 page++;
+	 $.ajax({
+	 url: '/feed?page=' + page,
+	 type: 'get',
+	 dataType: 'script',
+	 success: function() {
+	    $(window).sausage('draw');
+	    loading=false;
+	 }
+	 });
+      }
+   });
 
-  $(window).sausage();
-}());
-</script>
-<div align='center' class='posts' id='posts'>
-   <div class="page">
-      <%= render @posts %>
+   $(window).sausage();
+   }());
+   </script>
+   <div class='posts span8' id='posts'>
+      <div class="page">
+	 <%= render @posts %>
+      </div>
    </div>
 </div>
