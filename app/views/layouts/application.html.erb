@@ -17,11 +17,13 @@
 </div>
 </div>
 </div>
-<%= yield %>
-
+<div align="center">
 <p class="notice"><%= notice %></p>
+<% if alert %>
 <p class="alert" id="alert"><%= alert %></p>
-
+<% end %>
+</div>
+<%= yield %>
 
 </body>
 </html>
