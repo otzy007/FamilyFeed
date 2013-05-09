@@ -6,12 +6,14 @@
   -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
   -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
   box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
-  width: 800px;
+  width: 1024px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .gmaps4rails_map {
-  width: 800px;
-  height: 400px;
+  width: 1024px;
+  height: 720px;
 }
 
 .bing_map {
