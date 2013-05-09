@@ -5,7 +5,7 @@
       near <%= link_to post.checkin.gmaps4rails_address, map_path(post.checkin.id) %>, 
    <% end %>
    <%= post.created_at  %></small></div>
-   <%= link_to 'Comment', new_comment_path(:post => post.id), :remote => true %> 
+   <%= link_to '  Comment', new_comment_path(:post => post.id), :remote => true, :class => 'icon-comment-alt' %> 
    <% if post.comments != [] %>
       
       <% post.comments.each do |c| %>
