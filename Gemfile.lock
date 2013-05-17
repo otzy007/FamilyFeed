@@ -150,7 +150,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   rails-erd
   sass-rails (~> 3.2.3)
-  simple_calendar (~> 0.1.8)
+  simple_calendar
   sqlite3
   therubyracer
   uglifier (>= 1.0.3)

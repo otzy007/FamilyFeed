@@ -8,7 +8,7 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'gmaps4rails'
 gem 'kaminari'
-gem "simple_calendar", "~> 0.1.8"
+gem "simple_calendar"
 
 
 # Gems used only for assets and not required
