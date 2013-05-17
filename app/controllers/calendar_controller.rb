@@ -1,5 +1,6 @@
 class CalendarController < ApplicationController
   def index
+     @events = current_user.family.calendars
   end
 
   def new
