@@ -1,5 +1,6 @@
 <%= render :partial => 'feed/menu' %>
 
+<%= link_to 'New Event', :calendar_new, :class => 'btn btn-primary' %>
 <%= calendar @events do |event| %>
   <div><%= link_to event.title, event %></div>
 <% end %>

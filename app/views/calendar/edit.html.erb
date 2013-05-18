@@ -1,2 +1,4 @@
-<h1>Calendar#edit</h1>
-<p>Find me in app/views/calendar/edit.html.erb</p>
+<%= render :partial => 'feed/menu' %>
+
+<%= form_tag({:action => 'update'}, :method => :calendar) %>
+<%= render 'form' %>
