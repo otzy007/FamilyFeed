@@ -12,7 +12,7 @@ class Checkin < ActiveRecord::Base
   def gmaps4rails_address
      begin
 	where = Gmaps4rails.places latitude, longitude, 'AIzaSyBuvYB3BBl-wa8F8Y4BqMT_Pn4hsSq_2dc', nil, 20
-	"#{where[0][:name]}, #{where[0][:full_data]['vicinity'].force_encoding("iso-8859-1")}" 
+	"#{where[0][:name]}, #{where[0][:full_data]['vicinity']}"
      rescue Exception
 	"somewhere"
      end
