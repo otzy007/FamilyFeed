@@ -2,14 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.span12 {
+  margin-right: -20px;
+}
 .add-task {
-   margin-left: 10px;
-   margin-right: 10px;
+  padding-top: 30px;
+  .new-task-label {
+    width: 797px;
+  }
 }
 
 .tasks {
-   margin-left: 10px;
-   margin-right: 10px;
+  padding-top: 20px;
    .new-tasks {
      .task-checkbox {
 	float: left;
