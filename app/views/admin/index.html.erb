@@ -10,6 +10,7 @@
   </div>
   
 <% else %>
+   <div class='left-margin'>
      <h2> Family members </h2>
      <div align="right"><%= link_to "Add member", new_admin_path, :class => 'btn btn-primary' %></div><br />
      <table class="table" align="center">
@@ -22,4 +23,5 @@
 	    </tr>
         <% end %>
      </table>
+   </div>
 <% end %>
