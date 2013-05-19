@@ -1,7 +1,7 @@
 <%= form_tag({:action => 'create'}, :method => :post) %>
 <%= hidden_field :feed, 'longitude', :value => 'bau' %>
 <%= hidden_field :feed, 'latitude' %>
-<%= text_area :feed, 'post', :rows => 2, :cols => 240 %>
+<%= text_area :feed, 'post', :rows => 2, :cols => 240, :class => 'post-text-area' %>
 <%= submit_tag 'Post', :class => 'btn btn-large btn-primary' %>
 <br />
 <div style="white-space:nowrap;">
