@@ -1,5 +1,9 @@
 <%= render :partial => 'feed/menu' %>
-<div class="google-maps">
-<%= gmaps4rails(@json) %>
-<%= yield :scripts %>
+<div>
+  <%= render :partial => 'calendar/left-menu' %>
+
+  <div class="google-maps span12">
+    <%= gmaps4rails(@json) %>
+    <%= yield :scripts %>
+  </div>
 </div>
