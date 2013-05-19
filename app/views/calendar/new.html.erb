@@ -1,4 +1,9 @@
 <%= render :partial => 'feed/menu' %>
 
-<%= form_tag({:action => 'create'}, :method => :calendar) %>
-<%= render 'form' %>
+<div>
+  <%= render :partial => 'calendar/left-menu' %>
+  <div class='span12'>
+    <%= form_tag({:action => 'create'}, :method => :calendar) %>
+    <%= render 'form' %>
+  </div>
+</div>

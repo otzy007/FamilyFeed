@@ -1,7 +1,9 @@
 <%= render :partial => 'feed/menu' %>
 
-<div class='left-margin' style="padding-top: 30px">
-  <div align="right" style='margin-bottom: -50px'>
+<div>
+  <%= render 'left-menu' %>
+<div class='left-margin span12' style="padding-top: 30px">
+  <div align='right' style='margin-bottom: -150p;'>
     <%= link_to 'New Event', :calendar_new, :class => 'btn btn-primary' %>
   </div>
 <div align='left'>
@@ -10,3 +12,4 @@
   <% end %>
 </div>
 </div>
+    </div>
