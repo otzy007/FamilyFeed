@@ -1,10 +1,10 @@
 <div class='left-margin'>
 <%= label :calendar, 'Name'  %>
 <%= text_field :calendar, 'title' %><br />
-<%= datetime_select :calendar, 'date' %><br />
+<div class='date-time'><%= datetime_select :calendar, 'date' %></div><br />
 <%= label :calendar, 'Details' %>
 <%= text_area :calendar, 'text', :class => 'text-area-calendar' %>
 <br />
-<%= submit_tag 'Save', :class => 'btn' %>
+<%= submit_tag 'Save', :class => 'btn', :style => 'margin-right: 10px;' %>
 <%= link_to 'Cancel', :calendar_index, :class => 'btn btn-danger' %>
 </div>
