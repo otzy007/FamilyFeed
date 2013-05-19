@@ -4,23 +4,17 @@ class FeedController < ApplicationController
    def index
       @posts = []
       
-      if current_user.family
-	 @posts = current_user.family.posts.order('created_at DESC').page params[:page]
-# 	 current_user.family.posts.order('created_at DESC').each do |p|
-# 	    @posts << {:user => p.user, :text => p.text, :date => p.created_at,
-# 	               :comments => p.comments, :id => p.id, :checkin => p.checkin}
-# 	 end
-      else
-	 @posts = current_user.posts.order('created_at DESC') #.each do |u|
-# 	    @posts << {:user => p.user, :text => p.text, :date => p.created_at,
-# 	               :comments => p.comments, :id => p.id, :checkin => p.checkin}
-# 	 end
+      if current_user.family.nil?
+        redirect_to   :admin_index
+        return
       end
-      
+
+	    @posts = current_user.family.posts.order('created_at DESC').page params[:page]
+
       respond_to do |format|
-	 format.js
-	 format.html # index.html.erb
-	 format.xml  { render :xml => @posts }
+        format.js
+        format.html # index.html.erb
+        format.xml  { render :xml => @posts }
       end
    end
    
