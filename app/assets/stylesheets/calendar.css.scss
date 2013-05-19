@@ -3,9 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .left-margin {
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .text-area-calendar {
   width: 640px;
   height: 320px;
 }
+
+.next-month {
+  padding-bottom: 120px;
+}
+
+.calendar {
+  margin-top: 20px;
+}
+
+.calendar td { height: 70px; width: 14.28%; }
