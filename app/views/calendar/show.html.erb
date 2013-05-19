@@ -1,0 +1,11 @@
+<%= render :partial => 'feed/menu' %>
+<div class="left-margin">
+  <h3><%= @event.title %></h3>
+  <small>On: <%= @event.date %></small>
+  <br />
+  <br />
+  <%= @event.text %>
+  <br /><br />
+
+  <%= link_to 'Back', :calendar_index, :class => 'btn' %>
+</div>

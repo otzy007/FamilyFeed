@@ -6,6 +6,15 @@ class CalendarController < ApplicationController
   def new
   end
 
+  def show
+    @event = current_user.calendars.find_by_id params[:id]
+
+    if @event.nil?
+      redirect_to :calendar_index
+      return
+    end
+  end
+
   def edit
   end
   
