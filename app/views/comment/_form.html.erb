@@ -1,4 +1,4 @@
 <%= form_tag({:action => 'create'}, :method => :comment) %>
-<%= text_area :feed, 'comment', :rows => 2, :cols => 240 %>
+<%= text_area :feed, 'comment', :rows => 2, :cols => 240, :style=> 'width:420px' %>
 <%= hidden_field_tag :post, @post %> 
-<%= submit_tag 'Comment', :class => 'btn' %>
+<%= submit_tag 'Comment', :class => 'btn btn-primary' %>
