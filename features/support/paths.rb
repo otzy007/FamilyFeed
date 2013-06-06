@@ -15,6 +15,9 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    when /the new feed page/
+      new_feed_path
+
 
 
 
