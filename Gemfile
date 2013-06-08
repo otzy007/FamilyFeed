@@ -34,8 +34,8 @@ group :production do
 end
 
 group :development do
-   gem 'railroady' #UMLs
-   gem "rails-erd"
+#    gem 'railroady' #UMLs
+#    gem "rails-erd" #nu cred ca mai e nevoie de umluri
    gem 'sqlite3'
 end
 
