@@ -79,7 +79,7 @@ GEM
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
-    jquery-rails (3.0.0)
+    jquery-rails (3.0.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.0)
@@ -94,7 +94,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.6)
-    nokogiri (1.5.9)
     orm_adapter (0.4.0)
     pg (0.15.1)
     polyglot (0.3.3)
@@ -105,7 +104,6 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    railroady (1.1.0)
     rails (3.2.13)
       actionmailer (= 3.2.13)
       actionpack (= 3.2.13)
@@ -114,11 +112,6 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
-    rails-erd (1.1.0)
-      activerecord (>= 3.0)
-      activesupport (>= 3.0)
-      choice (~> 0.1.6)
-      ruby-graphviz (~> 1.0.4)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -141,7 +134,6 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
-    ruby-graphviz (1.0.9)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -194,10 +186,7 @@ DEPENDENCIES
   kaminari
   launchy
   pg
-  railroady
   rails (= 3.2.13)
-  rails-erd
-  rspec-rails
   sass-rails (~> 3.2.3)
   simple_calendar
   simplecov
