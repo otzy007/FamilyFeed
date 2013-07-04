@@ -5,6 +5,8 @@ gem 'rails', '~> 4.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# protected attributes. Trebuie scapat de ele
+gem 'protected_attributes'
 
 gem 'gmaps4rails'
 gem 'kaminari'
@@ -27,7 +29,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'devise'
+gem 'devise', '>= 3.0.0.rc'
 
 group :production do
    gem 'pg'
