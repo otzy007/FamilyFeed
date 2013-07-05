@@ -17,6 +17,8 @@ module NavigationHelpers
       '/'
     when /the new feed page/
       new_feed_path
+    when /register/
+       new_user_registration_path
 
 
 
