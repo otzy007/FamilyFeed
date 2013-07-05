@@ -16,6 +16,7 @@ Background: Families and users exist
       
 Scenario: Family creation
    Given I am authenticated as "fara@fam.lie" with password "P@R0l@23"
+   When I go to the home page
    Then I should see "You do not belong to any family"
    When I follow "Create your family"
    Then I should see "Family members"
