@@ -23,7 +23,7 @@ class CalendarController < ApplicationController
   end
   
   def create
-    calendar = params[:calendar]
+    calendar = params.require(:calendar).permit :title, :text, :date
     event_time = DateTime.new calendar['date(1i)'].to_i, calendar['date(2i)'].to_i, calendar['date(3i)'].to_i,
                         calendar['date(4i)'].to_i, calendar['date(5i)'].to_i
 

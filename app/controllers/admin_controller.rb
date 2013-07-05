@@ -17,7 +17,7 @@ class AdminController < ApplicationController
   end
   
   def create
-     user_email = params[:users][:email]
+     user_email = params.require(:users).require :email
      puts user_email
      
      user = User.find_by_email user_email

@@ -6,7 +6,7 @@ gem 'rails', '~> 4.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # protected attributes. Trebuie scapat de ele
-gem 'protected_attributes'
+# gem 'protected_attributes'
 
 gem 'gmaps4rails'
 gem 'kaminari'

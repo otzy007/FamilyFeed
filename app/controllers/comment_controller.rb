@@ -9,8 +9,8 @@ class CommentController < ApplicationController
    end
    
    def create
-      comment = params[:feed][:comment]
-      post = params[:post]
+      comment = params.require(:feed).require :comment
+      post = params.require :post
       p post
       
       current_user.family.posts.find_by_id(post).comments.create :text => comment, :user => current_user

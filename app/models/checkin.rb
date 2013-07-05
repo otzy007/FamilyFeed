@@ -1,6 +1,4 @@
 class Checkin < ActiveRecord::Base
-  attr_accessible :family_id, :place, :user_id, :user, :family, :post, :longitude, :latitude, :gmaps
-  
   belongs_to :user
   belongs_to :post
   belongs_to :family
