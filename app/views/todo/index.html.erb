@@ -18,7 +18,7 @@
 	       <div class="task-text" >
 		  <%= task.text %>
 		  <%= link_to "Delete", todo_path(task.id), :class => "btn-small btn-danger task-destroy", 
-		     :method => :delete, :confirm => "Are you sure?" %>
+		     :method => :delete, :data => { :confirm => "Are you sure?" } %>
 	       </div>
 	    </div>
 	    </li>
@@ -38,7 +38,7 @@
 	       <div class="task-text" >
 		  <%= task.text %>
 		  <%= link_to "Delete", todo_path(task.id), :class => "btn-small btn-danger task-destroy", 
-		     :method => :delete, :confirm => "Are you sure?" %>
+		     :method => :delete, :data => { :confirm => "Are you sure?" } %>
 	       </div>
 	    </div>
 	    </li>
