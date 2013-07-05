@@ -14,3 +14,5 @@ Background: Families and users exist and I am logged in
       | fara@fam.lie |   farafam  | P@R0l@23 |           |
       
    And I am authenticated as "mail1@ff.eed" with password "par0l@12"
+   And I am on the calendar index page
+   

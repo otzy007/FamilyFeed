@@ -14,3 +14,17 @@ Background: Families and users exist and I am logged in
       | fara@fam.lie |   farafam  | P@R0l@23 |           |
       
    And I am authenticated as "mail1@ff.eed" with password "par0l@12"
+   And I am on the home page
+   
+Scenario: Add a post
+   When I fill in "feed_post" with "test post"
+   And I press "Post"
+   Then I should see "test post"
+   
+Scenario: Add a checkin
+   When I check "feed_checkin"
+  # And I share my location and it returns "41.8954656,12.4823243"
+   And I fill in "feed_post" with "test checkin"
+   And I press "Post"
+   Then I should see "test checkin"
+  # And I should see "near"
