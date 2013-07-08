@@ -46,3 +46,9 @@ Scenario: Invite User
    And I press "Add User"
    Then a invitation should be be created for "new@user.invited"
    
+Scenario: Delete the user from family
+   Given I am authenticated as "sin@gur.el" with password "P@R0l@23"
+   When I go to the admin index page
+   And I follow "Remove User"
+   Then I should see "You do not belong to any family"
+   
