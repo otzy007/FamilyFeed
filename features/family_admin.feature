@@ -30,6 +30,14 @@ Scenario: Add registered user to family
    Then I should see "Family members"
    And I should see "fara@fam.lie"
    
+Scenario: Cannot add a user that is in another family
+   Given I am authenticated as "mail1@ff.eed" with password "par0l@12"
+   And I go to the admin index page
+   And I follow "Add member"
+   And I fill in "users_email" with "sin@gur.el"
+   And I press "Add User"
+   Then I should see "User singur is already in a family"
+   
 Scenario: Invite User
    Given I am authenticated as "mail1@ff.eed" with password "par0l@12"
    And I go to the admin index page
