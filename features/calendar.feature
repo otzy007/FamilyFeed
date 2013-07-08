@@ -16,3 +16,15 @@ Background: Families and users exist and I am logged in
    And I am authenticated as "mail1@ff.eed" with password "par0l@12"
    And I am on the calendar index page
    
+Scenario: Add event
+   When I follow "New Event"
+   And I fill in "calendar_title" with "Marele eveniment"
+   And I fill in "calendar_text" with "Continut"
+   And I press "Save"
+   Then I should see "Marele eveniment"
+   
+Scenario: Show event
+   Given the event "Alt eveniment" with "Nimic important" exist
+   Then I should see "Alt eveniment"
+   When I follow "Alt eveniment"
+   Then I should see "Nimic important"
