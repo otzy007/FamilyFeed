@@ -26,6 +26,12 @@ FamilyFeed::Application.routes.draw do
 	get 'show_all'
      end
   end
+  
+  get 'admin/invite/:email/not_registered' => 'admin/invite#not_registered'
+  
+  namespace :admin do
+     resources :invite
+  end
   #   match 'admin/create_family' => 'admin#create_family'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
