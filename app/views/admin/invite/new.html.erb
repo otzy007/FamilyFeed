@@ -5,7 +5,7 @@
    <p>
       <%= form_tag({:action => 'create'}, :method => :post) %>
       <%= label :email, 'Email' %>
-      <%= text_field :users, 'email', :value => @email %>
+      <%= text_field :user, 'email', :value => @email %>
       <%= submit_tag 'Invite', :class => "btn btn-primary btn-large" %>
    </p>
 </div>
