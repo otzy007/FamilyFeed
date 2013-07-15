@@ -27,8 +27,6 @@ FamilyFeed::Application.routes.draw do
      end
   end
   
-  get 'admin/invite/:email/not_registered' => 'admin/invite#not_registered'
-  
   namespace :admin do
      resources :invite
   end
