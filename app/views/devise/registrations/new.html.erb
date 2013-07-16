@@ -12,6 +12,10 @@
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
+  <div>
+   <%= f.label :invitation %>
+   <%= f.text_field :invitation, :value => @invitation %>
+  </div>
 
   <div><%= f.submit "Sign up", :class => 'btn' %></div>
 <% end %>
