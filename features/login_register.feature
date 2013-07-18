@@ -29,3 +29,15 @@ Scenario: User registration
    And I fill in "user_password_confirmation" with "0paro!@lunga"
    And I press "Sign up"
    Then I should see "You have signed up successfully"
+   
+Scenario: Registration with invite
+   Given "lol@lol.haha" is invited by "mail1@ff.eed" with token "lol"
+   When I go to register
+   And I fill in "user_email" with "lol@lol.haha"
+   And I fill in "user_name" with "cineva"
+   And I fill in "user_password" with "0paro!@lunga"
+   And I fill in "user_password_confirmation" with "0paro!@lunga"
+   And I fill in "user_invitation" with "lol"
+   And I press "Sign up"
+   Then I should see "You have signed up successfully"
+   And I should see "Check-in"
