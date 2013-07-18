@@ -2,4 +2,26 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+   admin:
+      index:
+         not_belonging_to_family: "You do not belong to any family"
+         ask_for_add: "You can ask one of your family members to add you to your family or you can create your own family."
+         create_family: "Create your family"
+         add_member: "Add member"
+         remove_user: "Remove User"
+      create:
+         user_now_in_family: "User %{name} is now in your family"
+         user_already_in_family: "User %{name} is already in a family"
+         no_user_registered: "No user is registered with %{email}. Ask him first to register"
+      destroy:
+         user_removed: "User %{name} removed from your family"
+      show:
+         family_created: 'Family created!'
+      new:
+         add_an_user: 'Add an user to your family'
+         add_or_invite: "You can add an existing user who doesn't belong to a family or invite him."
+         add_user: 'Add User'
+         
+   name: 'Name'
+   are_you_sure: "Are you sure?"
+   done: "Done"
