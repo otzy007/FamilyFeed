@@ -18,7 +18,7 @@
 	       <div class="task-text" >
 		  <%= task.text %>
 		  <%= link_to "Delete", todo_path(task.id), :class => "btn-small btn-danger task-destroy", 
-		     :method => :delete, :data => { :confirm => "Are you sure?" } %>
+		     :method => :delete, :data => { :confirm => t(:are_you_sure) } %>
 	       </div>
 	    </div>
 	    </li>
@@ -26,7 +26,7 @@
    </ul>
 </div>
 
-<h3 style="margin-left:10px;">Done</h3>
+<h3 style="margin-left:10px;"><%= t :done %></h3>
 <div class="tasks">
    <ul class="new-tasks unstyled">
       <% @done.each do |task| %>
@@ -38,7 +38,7 @@
 	       <div class="task-text" >
 		  <%= task.text %>
 		  <%= link_to "Delete", todo_path(task.id), :class => "btn-small btn-danger task-destroy", 
-		     :method => :delete, :data => { :confirm => "Are you sure?" } %>
+		     :method => :delete, :data => { :confirm => t(:are_you_sure) } %>
 	       </div>
 	    </div>
 	    </li>
