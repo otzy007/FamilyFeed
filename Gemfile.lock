@@ -49,6 +49,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    ci_reporter (1.9.0)
+      builder (>= 2.1.2)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -158,6 +160,8 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
+    simplecov-rcov (0.2.3)
+      simplecov (>= 0.4.1)
     slim (2.0.0)
       temple (~> 0.6.5)
       tilt (~> 1.3, >= 1.3.3)
@@ -199,6 +203,7 @@ DEPENDENCIES
   bootstrap-sass
   brakeman
   capybara
+  ci_reporter
   coffee-rails
   cucumber-rails
   cucumber-rails-training-wheels
@@ -216,6 +221,7 @@ DEPENDENCIES
   sass-rails
   simple_calendar
   simplecov
+  simplecov-rcov
   sqlite3
   therubyracer
   uglifier (>= 1.0.3)
