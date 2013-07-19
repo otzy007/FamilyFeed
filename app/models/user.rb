@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   has_many :todos 
   has_many :checkins, :through => :posts
   has_many :comments, :through => :posts
+  has_many :invites, :through => :family
 end

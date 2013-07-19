@@ -44,7 +44,23 @@ Scenario: Invite User
    And I follow "Add member"
    And I fill in "users_email" with "new@user.invited"
    And I press "Add User"
-   Then a invitation should be be created for "new@user.invited"
+   Then I should see "new@user.invited is not registered."
+   And I press "Invite"
+   Then I should see "new@user.invited invited"
+   
+Scenario: User already invited
+   Given I am authenticated as "mail1@ff.eed" with password "par0l@12"
+   And I go to the admin index page
+   And I follow "Add member"
+   And I fill in "users_email" with "new@user.invited"
+   And I press "Add User"
+   And I press "Invite"
+   And I go to the admin index page
+   And I follow "Add member"
+   And I fill in "users_email" with "new@user.invited"
+   And I press "Add User"
+   And I press "Invite"
+   Then I should see "User already invited!"
    
 Scenario: Delete the user from family
    Given I am authenticated as "sin@gur.el" with password "P@R0l@23"
