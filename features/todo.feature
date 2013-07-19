@@ -35,9 +35,9 @@ Scenario: Change todo status
       |    text    | user_id | post_id | status | family_id | id |
       |  new todo  |    1    |    23   |   new  |     1     | 11 |
    And I am on the todo index page
-   When I check "new"
-   And I go to the todo index page
-   Then the "new" checkbox should be checked
+#   When I check "new"
+ #  And I go to the todo index page
+  # Then the "new" checkbox should be checked
    
    
    
