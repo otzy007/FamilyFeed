@@ -1,7 +1,7 @@
 ro:
    admin:
       index:
-         not_belonging_to_family: "You do not belong to any family"
+         not_belonging_to_family: "Nu apartii niciunei familii"
          ask_for_add: "You can ask one of your family members to add you to your family or you can create your own family."
          create_family: "Create your family"
          add_member: "Add member"
