@@ -29,7 +29,7 @@ class AdminController < ApplicationController
 	   redirect_to :admin_index, :alert => "User #{user.name} is already in a family"
 	end
      else
-	redirect_to :admin_index, :alert => "No user is registered with #{user_email}. Ask him first to register"
+	redirect_to new_admin_invite_path(:email => user_email)
      end
   end
   
