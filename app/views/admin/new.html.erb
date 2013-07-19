@@ -1,11 +1,12 @@
 <%= render :partial => 'feed/menu' %>
 
 <div class="hero-unit">
-   <h2> Add an existing user to your family </h2>
-   <p> In order to add someone to your family he first has to register and than you can add him by the email address used to register.</p><p>
-   <%= form_tag({:action => 'create'}, :method => :post) %>
-   <%= label :email, 'Email' %>
-   <%= text_field :users, 'email' %>
+   <h2><%= t '.add_an_user' %></h2>
+   <p><%= t '.add_or_invite' %></p>
+   <p>
+      <%= form_tag({:action => 'create'}, :method => :post) %>
+      <%= label :email, 'Email' %>
+      <%= text_field :users, 'email' %>
    </p><p>
-   <%= submit_tag 'Add User', :class => 'btn' %></p>
+   <%= submit_tag t('.add_user'), :class => 'btn' %></p>
 </div>

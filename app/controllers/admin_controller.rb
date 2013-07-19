@@ -13,7 +13,7 @@ class AdminController < ApplicationController
      family = Family.create!
      new_family = family.id
      current_user.update_attributes :family => family
-     redirect_to :admin_index, :notice => 'Family created!'
+     redirect_to :admin_index, :notice => t('.family_created')
   end
   
   def create
@@ -24,12 +24,12 @@ class AdminController < ApplicationController
      if user
 	unless user.family
 	   user.update_attributes :family => current_user.family
-	   redirect_to :admin_index, :notice => "User #{user.name} is now in your family"
+	   redirect_to :admin_index, :notice => t('.user_now_in_family', name: user.name)
 	else
-	   redirect_to :admin_index, :alert => "User #{user.name} is already in a family"
+	   redirect_to :admin_index, :alert => t('.user_already_in_family', name: user.name)
 	end
      else
-	redirect_to :admin_index, :alert => "No user is registered with #{user_email}. Ask him first to register"
+	redirect_to :admin_index, :alert => t('.no_user_registered', email: user_email)
      end
   end
   
@@ -38,7 +38,7 @@ class AdminController < ApplicationController
      
      if current_user.family == user.family
 	user.update_attributes :family => nil
-	redirect_to :admin_index, :alert => "User #{user.name} removed from your family"
+	redirect_to :admin_index, :alert => t('.user_removed', name: user.name)
      else
 	redirect_to :admin_index
      end

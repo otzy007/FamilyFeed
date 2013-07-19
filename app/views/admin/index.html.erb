@@ -2,24 +2,24 @@
 
 <% unless @family %>
   <div class="hero-unit">
-     <h2> You do not belong to any family </h2>
-     <p> You can ask one of your family members to add you to your family or you can create your own family. </p>
+     <h2><%= t('.not_belonging_to_family') %></h2>
+     <p><%= t('.ask_for_add') %></p>
      <p>
-        <a class="btn btn-primary btn-large" href="/admin/show"> Create your family </a>
+        <a class="btn btn-primary btn-large" href="/admin/show"><%= t '.create_family' %></a>
      </p>
   </div>
   
 <% else %>
    <div class='left-margin'>
      <h2> Family members </h2>
-     <div align="right"><%= link_to "Add member", new_admin_path, :class => 'btn btn-primary' %></div><br />
+     <div align="right"><%= link_to t('.add_member'), new_admin_path, :class => 'btn btn-primary' %></div><br />
      <table class="table" align="center">
-	<tr><td>Name</td><td> Email </td></tr>
+	<tr><td><%= t(:name) %></td><td> Email </td></tr>
         <% @users.each do |user| %>
 	    <tr>
 	       <td><%= user.name %></td>
 	       <td><%= user.email %></td>
-	       <td><%= link_to "Remove User", admin_path(user.id), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+	       <td><%= link_to t('.remove_user'), admin_path(user.id), :method => :delete, :data => { :confirm => t(:are_you_sure) } %>
 	    </tr>
         <% end %>
      </table>

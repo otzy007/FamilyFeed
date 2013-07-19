@@ -1,10 +1,7 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
-en:
+ro:
    admin:
       index:
-         not_belonging_to_family: "You do not belong to any family"
+         not_belonging_to_family: "Nu apartii niciunei familii"
          ask_for_add: "You can ask one of your family members to add you to your family or you can create your own family."
          create_family: "Create your family"
          add_member: "Add member"
@@ -18,7 +15,7 @@ en:
       show:
          family_created: 'Family created!'
       new:
-         add_an_user: 'Add an user to your family'
+         add_an_user: 'Adauga un membru al familiei'
          add_or_invite: "You can add an existing user who doesn't belong to a family or invite him."
          add_user: 'Add User'
          
