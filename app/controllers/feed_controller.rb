@@ -3,13 +3,14 @@ class FeedController < ApplicationController
    
    def index
       @posts = []
+      @page = params.permit(:page)[:page]
       
       if current_user.family.nil?
         redirect_to   :admin_index
         return
       end
 
-	    @posts = current_user.family.posts.order('created_at DESC').page params[:page]
+	    @posts = current_user.family.posts.order('created_at DESC').page @page
 
       respond_to do |format|
         format.js
