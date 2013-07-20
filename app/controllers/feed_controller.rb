@@ -20,7 +20,12 @@ class FeedController < ApplicationController
    end
    
    def create
-      post = params.require(:feed).require(:post)
+     begin
+       post = params.require(:feed).require(:post)
+     rescue ActionController::ParameterMissing
+       redirect_to :feed_index, :alert => 'The post should contain a message'
+       return
+     end
      
       pos_params = params.require(:feed).permit :longitude, :latitude
       longitude = pos_params[:longitude]
