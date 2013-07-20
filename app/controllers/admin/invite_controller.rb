@@ -11,6 +11,6 @@ class Admin::InviteController < ApplicationController
       end
       invite = current_user.family.invites.create email: @email, user: current_user, token: Digest::MD5.hexdigest(rand.to_s)
       @token = invite.token
-      Invitations.invite(current_user.name, current_user.email, @token, @email).deliver
+      Invitations.invite(current_user.name, current_user.email, @token, @email)#.deliver
    end
 end
