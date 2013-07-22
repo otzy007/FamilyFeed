@@ -70,7 +70,7 @@ FamilyFeed::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
     :address => "cloudients.com",
-    :port => 587,
+    :port => 465,
     :domain => 'cloudients.com',
     :user_name => 'familyfeed@cloudients.com',
     :password => 'zA9SK8UJ',
