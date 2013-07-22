@@ -35,4 +35,15 @@ FamilyFeed::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
   config.eager_load = false
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = false
+  config.action_mailer.smtp_settings = {
+      :address => "cloudients.com",
+      :port => 587,
+      :domain => 'cloudients.com',
+      :user_name => 'familyfeed@cloudients.com',
+      :password => 'zA9SK8UJ',
+      :authentication => 'plain',
+      :enable_starttls_auto => false}
 end

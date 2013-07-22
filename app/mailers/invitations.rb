@@ -1,5 +1,5 @@
 class Invitations < ActionMailer::Base
-  default from: "invites@familyfeed"
+  default from: "familyfeed@cloudients.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
