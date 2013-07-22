@@ -7,7 +7,7 @@ describe Invitations do
     it "renders the headers" do
       mail.subject.should eq("my@em.ail invited you to his FamilyFeed")
       mail.to.should eq(["mai@il.too"])
-      mail.from.should eq(["invites@familyfeed"])
+      mail.from.should eq(["familyfeed@cloudients.com"])
     end
 
     it "renders the body" do
