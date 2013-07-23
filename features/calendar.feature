@@ -35,3 +35,11 @@ Scenario: Delete event
    And I follow "Delete"
    Then I should see "New Event"
    And I should not see "Alt eveniment"
+   
+Scenario: Modify event name
+   Given the event "Alt eveniment" with "Nimic important" exist
+   When I follow "Alt eveniment"
+   And I follow "Edit"
+   And I fill in "calendar_title" with "Marele eveniment"
+   And I press "Save"
+   Then I should see "Marele eveniment"

@@ -16,10 +16,21 @@ class CalendarController < ApplicationController
   end
 
   def edit
+     @calendar = Calendar.find_by_id params.require(:id)
   end
   
   def update
+     calendar = params.require(:calendar).permit :title, :text, :date
+     event_time = DateTime.new calendar['date(1i)'].to_i, calendar['date(2i)'].to_i, calendar['date(3i)'].to_i,
+                        calendar['date(4i)'].to_i, calendar['date(5i)'].to_i
      
+     @calendar = Calendar.find_by_id params.require(:id)
+     @calendar.text = calendar[:text]
+     @calendar.title = calendar[:title]
+     @calendar.date = event_time
+     @calendar.save
+     
+     redirect_to calendar_path(@calendar)
   end
   
   def create

@@ -5,6 +5,7 @@
   <div class="span12 calendar-show">
       <h1><%= @event.title %></h1>
       <small>On: <%= @event.date %></small>
+      <%= link_to "Edit", edit_calendar_path(@event.id), :class => "btn-primary btn-small" %>
       <%= link_to "Delete", calendar_path(@event.id), :class => "btn-small btn-danger task-destroy", 
 		  :method => :delete, :data => { :confirm => "Are you sure?" } %>
       <br />
