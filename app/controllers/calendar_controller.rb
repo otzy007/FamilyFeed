@@ -36,6 +36,8 @@ class CalendarController < ApplicationController
   end
   
   def destroy
+     event = Calendar.destroy params.require(:id)
      
+     redirect_to :calendar_index
   end
 end

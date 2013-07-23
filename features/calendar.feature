@@ -28,3 +28,10 @@ Scenario: Show event
    Then I should see "Alt eveniment"
    When I follow "Alt eveniment"
    Then I should see "Nimic important"
+   
+Scenario: Delete event
+   Given the event "Alt eveniment" with "Nimic important" exist
+   When I follow "Alt eveniment"
+   And I follow "Delete"
+   Then I should see "New Event"
+   And I should not see "Alt eveniment"
