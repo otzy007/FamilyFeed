@@ -14,8 +14,5 @@
 
   <div><%= f.submit "Sign in", :class => 'btn' %></div>
 <% end %>
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-<%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
-<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
 <%= render "devise/shared/links" %>
 </div>
