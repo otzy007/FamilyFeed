@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130712171845) do
+ActiveRecord::Schema.define(version: 20130710144421) do
 
   create_table "calendars", force: true do |t|
     t.datetime "date"
