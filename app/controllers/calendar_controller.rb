@@ -30,6 +30,9 @@ class CalendarController < ApplicationController
      @calendar.date = event_time
      @calendar.save
      
+     current_user.posts.create :text => "<div class='icon-calendar'></div>&nbsp;<small>#{current_user.name} modified <b><a href='/calendar/#{@calendar.id}'>#{calendar[:title]}</a></b> on #{event_time} to the <a href='/calendar'>Calendar</a></small>",
+                              :family => current_user.family, :calendar => @calendar
+     
      redirect_to calendar_path(@calendar)
   end
   
