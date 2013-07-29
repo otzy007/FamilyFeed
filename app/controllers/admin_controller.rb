@@ -34,7 +34,7 @@ class AdminController < ApplicationController
   end
   
   def destroy
-     user = User.find_by_id params[:id]
+     user = User.find_by_id params.require(:id)
      
      if current_user.family == user.family
 	user.update_attributes :family => nil

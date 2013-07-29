@@ -6,11 +6,11 @@ class MapController < ApplicationController
   end
 
   def show
-     @json = Checkin.find_by_family_id_and_id(current_user.family.id, params[:id]).to_gmaps4rails
+     @json = Checkin.find_by_family_id_and_id(current_user.family.id, params.require(:id)).to_gmaps4rails
      render :index
   end
   def show_all
-     user_id = params[:id]
+     user_id = params.require(:id)
      
      @json = Checkin.where(family_id: current_user.family.id, user_id: user_id).to_gmaps4rails
      render :index

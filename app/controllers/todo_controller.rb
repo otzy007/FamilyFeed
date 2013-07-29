@@ -20,7 +20,7 @@ class TodoController < ApplicationController
   end
 
   def update
-     todo = Todo.find_by_id_and_family_id params[:id], current_user.family.id 
+     todo = Todo.find_by_id_and_family_id params.require(:id), current_user.family.id 
      oldstatus = todo.status
      
      if oldstatus == 'new'
@@ -37,7 +37,7 @@ class TodoController < ApplicationController
   end
   
   def destroy
-     Todo.find_by_id_and_family_id(params[:id], current_user.family.id).destroy
+     Todo.find_by_id_and_family_id(params.require(:id), current_user.family.id).destroy
      
      redirect_to :todo_index
   end
