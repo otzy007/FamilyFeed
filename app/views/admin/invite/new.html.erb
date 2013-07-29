@@ -1,6 +1,6 @@
 <%= render 'admin/menu' %>
 <div class="hero-unit">
-   <h2><%= @email %> is not registered.</h2>
+   <h2><%= h @email %> is not registered.</h2>
    <p>You can invite him into your family.</p>
    <p>
       <%= form_tag({:action => 'create'}, :method => :post) %>

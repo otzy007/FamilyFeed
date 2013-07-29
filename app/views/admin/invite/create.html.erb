@@ -1,6 +1,6 @@
 <%= render 'admin/menu' %>
 <div class="hero-unit">
-   <h2><%= @email %> invited!</h2>
+   <h2><%= h @email %> invited!</h2>
    <p>He will recieve an email with the invitation.</p>
    <p>Or you can deliver him the link to register: <%= text_field 'register', 'token', :value => 'http://' + request.host + new_user_registration_path + '?invitation=' + @token %></p>
 </div>
