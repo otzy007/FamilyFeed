@@ -3,8 +3,8 @@ class CommentController < ApplicationController
    def new
       @post = params.require [:post]
       respond_to do |format|
-	 format.js
-	 format.html
+	      format.js
+	      format.html
       end
    end
    
