@@ -7,7 +7,7 @@ class CalendarController < ApplicationController
   end
 
   def show
-    @event = current_user.calendars.find_by_id params.require(:id)
+    @event = current_user.family.calendars.find_by_id params.require(:id)
 
     if @event.nil?
       redirect_to :calendar_index
