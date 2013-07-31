@@ -1,5 +1,5 @@
 Given /^I am not authenticated$/ do
-  visit('/users/sign_out', :method => :delete) # ensure that at least
+  delete('/users/sign_out') # ensure that at least
 end
 
 Given /^I am authenticated as "([^\"]*)" with password "([^\"]*)"$/ do | email, password |
