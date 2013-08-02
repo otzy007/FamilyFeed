@@ -79,4 +79,5 @@ FamilyFeed::Application.configure do
     :ssl => true
   }
 
+  GA.tracker = "UA-42917079-1"
 end

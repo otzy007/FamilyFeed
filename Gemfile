@@ -11,7 +11,7 @@ gem 'rails', '~> 4.0'
 # gem 'protected_attributes'
 
 gem 'gmaps4rails'
-gem 'kaminari'
+gem 'kaminari' # paginare
 gem "simple_calendar"
 
 gem 'omniauth'
@@ -19,9 +19,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
-
+# Statistici
 gem 'newrelic_rpm'
-
+gem 'google-analytics-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
