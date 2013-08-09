@@ -1,7 +1,8 @@
 class CommentController < ApplicationController
    
    def new
-      @post = params.require [:post]
+      @post = params.permit([:post])[:post]
+      p @post
       respond_to do |format|
 	      format.js
 	      format.html
