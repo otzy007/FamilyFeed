@@ -9,7 +9,7 @@ describe Checkin do
    end
    
    it 'should find nearby places' do
-      Checkin.new(latitude: 46.92749999999999, longitude: 26.370833).gmaps4rails_address.should include("Piatra Neamt")
+      Checkin.new(latitude: 46.92749999999999, longitude: 26.370833).gmaps4rails_address.should include("Piatra Neam")
    end
    
    it 'should catch an exception' do
