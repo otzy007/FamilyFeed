@@ -1,4 +1,4 @@
-<div align="center" style="margin-top: 50px">
+<div align="center" style="margin-top: 50px;margin:0 auto;width:215px;">
 <h1>Sign In</h1>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -6,7 +6,8 @@
   <%= f.password_field :password, :placeholder => "Password" %>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div><div style="float:left"> <%= f.check_box :remember_me %>
+     </div><div  align="left" style="margin-left:30px;margin-top:5px;padding-top:3px;margin-bottom:15px"><%= f.label :remember_me %></div></div>
   <% end -%>
 
   <div><%= f.submit "Sign in", :class => 'btn' %></div>
