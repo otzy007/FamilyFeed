@@ -2,10 +2,13 @@ class CommentController < ApplicationController
    
    def new
       @post = params.permit([:post])[:post]
-      p @post
+      
+      unless @post
+	 @event = params.permit([:event])[:event]
+      end
       respond_to do |format|
-	      format.js
-	      format.html
+	    format.js
+	    format.html
       end
    end
    
