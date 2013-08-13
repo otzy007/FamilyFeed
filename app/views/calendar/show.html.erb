@@ -16,7 +16,7 @@
       <% if @event.comments != [] %>
 	 <div>
 	 <% @event.comments.each do |c| %>
-	    <div class='comment'>
+	    <div class='comment' id=<%= c.id %>>
 	       <b><div class='icon-reply'></div><%= link_to "  " + c.user.name, show_all_map_path(c.user.id) %></b><br />
 	       <%= c.text %> <br />
 	       <div class="date"><%= c.created_at  %></div>

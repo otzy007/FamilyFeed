@@ -18,7 +18,10 @@ class CommentController < ApplicationController
 	 redirect_to :feed_index
       else
 	 event = params.permit([:event])[:event]
-	 current_user.family.calendars.find(event).comments.create :text => comment, :user => current_user
+	 comm = current_user.family.calendars.find(event).comments.create :text => comment, :user => current_user
+	 current_user.posts.create :text => "<div class='icon-reply'></div>&nbsp;#{comment} <br /><small> on the " +
+	       "<a href=#{calendar_path(event) + '#' + comm.id.to_s}>#{Calendar.find(event).title}</a> event</small>", 
+	   :family => current_user.family
 	 
 	 redirect_to calendar_path(event)
       end
