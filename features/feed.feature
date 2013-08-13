@@ -28,3 +28,10 @@ Scenario: Add a checkin
    And I press "Post"
    Then I should see "test checkin"
   # And I should see "near"
+   
+Scenario: Comment post
+   When I fill in "feed_post" with "post"
+   And I press "Post"
+   And I follow "Comment"
+   And I fill in "feed_comment" with "le comment"
+   Then I should see "le comment"
