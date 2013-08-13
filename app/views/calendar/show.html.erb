@@ -12,4 +12,7 @@
       <br />
       <%= h @event.text %>
   </div>
+  <div class="new-comment">
+   <%= render :partial => 'comment/form', :locals => {:event => @event.id} %>
+  </div>
 </div>
