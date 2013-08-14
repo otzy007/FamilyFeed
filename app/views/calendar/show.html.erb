@@ -4,7 +4,7 @@
   <%= render :partial => 'calendar/left_menu' %>
   <div class="span12 calendar-show">
       <h1><%= h @event.title %></h1>
-      <small>On: <%= h @event.date %></small>
+      <small>On: <%= h @event.date %> by <%= link_to @event.user.name, show_all_map_path(@event.user.id) %></small>
       <%= link_to "Edit", edit_calendar_path(@event.id), :class => "btn-primary btn-small" %>
       <%= link_to "Delete", calendar_path(@event.id), :class => "btn-small btn-danger task-destroy", 
 		  :method => :delete, :data => { :confirm => "Are you sure?" } %>
