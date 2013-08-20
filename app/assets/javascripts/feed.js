@@ -1,5 +1,3 @@
-var x=document.getElementById("alert");
-
 function getLocation()
 {
   if (navigator.geolocation && document.getElementById('feed_checkin').checked)
