@@ -10,8 +10,13 @@ class CommentController < ApplicationController
    end
    
    def create
-      comment = params.require(:feed).require :comment
-      post = params.permit([:post])[:post]
+      begin
+	 comment = params.require(:feed).require :comment
+	 post = params.permit([:post])[:post]
+      rescue ActionController::ParameterMissing
+	 redirect_to :feed_index, :alert => 'The comment should contain a message'
+	 return
+     end
       
       if post
 	 current_user.family.posts.find_by_id(post).comments.create :text => comment, :user => current_user
