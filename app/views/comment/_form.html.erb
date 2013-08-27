@@ -1,5 +1,5 @@
 <%= form_tag({:action => 'create', :controller => 'comment'}, :method => :comment) %>
-<%= text_area :feed, 'comment', :rows => 2, :cols => 240, :style=> 'width:420px', :onkeydown => 'send_comment();' %>
+<%= text_area :feed, "comment", :rows => 2, :cols => 240, :style=> 'width:420px', :onkeydown => "submit_comment(event, #{@post});" %>
 <% if @post %>
    <%= hidden_field_tag :post, @post %> 
 <% elsif @event %>
