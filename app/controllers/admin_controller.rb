@@ -24,6 +24,7 @@ class AdminController < ApplicationController
      if user
 	unless user.family
 	   user.update_attributes :family => current_user.family
+	   current_user.posts.create :text => "<small>added #{user.name} to the family.</small>", :family => current_user.family
 	   redirect_to :admin_index, :notice => "User #{user.name} is now in your family"
 	else
 	   redirect_to :admin_index, :alert => "User #{user.name} is already in a family"
