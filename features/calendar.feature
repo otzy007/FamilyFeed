@@ -43,10 +43,3 @@ Scenario: Modify event name
    And I fill in "calendar_title" with "Marele eveniment"
    And I press "Save"
    Then I should see "Marele eveniment"
-   
-Scenario: Create event comment
-   Given the event "Alt eveniment" with "Nimic important" exist
-   When I follow "Alt eveniment"
-   And I fill in "feed_comment" with "Un comentariu"
-   And I press "Comment"
-   Then I should see "Un comentariu"
