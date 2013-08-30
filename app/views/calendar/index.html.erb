@@ -8,7 +8,11 @@
   </div>
 <div align='left'>
   <%= calendar @events do |event| %>
-      <div><%= link_to event.title, event %></div>
+      <% if event.title.include? 'birthday' %>
+	 <div><%= event.title %></div>
+      <% else %>
+	 <div><%= link_to event.title, event %></div>
+      <% end %>
   <% end %>
 </div>
 </div>

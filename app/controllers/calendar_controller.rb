@@ -1,6 +1,14 @@
 class CalendarController < ApplicationController
   def index
      @events = current_user.family.calendars
+     
+     month = params.require(:month).to_i
+     year = params.require(:year).to_i
+     current_user.family.users.map do |u|
+	if u.birth && u.birth.month == month
+	   @events << Calendar.create(date: Date.new(year, u.birth.month, u.birth.day), family: current_user.family, title: "#{u.name} birthday")
+	end
+     end
   end
 
   def new
