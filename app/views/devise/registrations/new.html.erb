@@ -24,6 +24,10 @@
    <td><%= f.password_field :password_confirmation %></td>
   </tr>
   <tr>
+   <td><%= f.label :birth_date %></td>
+   <td><%= f.date_select :birth, :start_year => 1900, :end_year => Time.now.year %></td>
+  </tr>
+  <tr>
    <td><%= f.label :invitation %></td>
    <td><%= f.text_field :invitation, :value => @invitation %></td>
   </tr>
