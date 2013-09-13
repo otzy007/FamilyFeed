@@ -11,7 +11,13 @@ class TodoController < ApplicationController
 
   def create
 #      post = params[:todo][:text]
-     post = params.require(:todo).require(:text)
+     begin
+	post = params.require(:todo).require(:text)
+     rescue ActionController::ParameterMissing
+	redirect_to :todo_index, :alert => 'You should input some text'
+	return
+     end
+	   
      todo = current_user.todos.create :text => post, :family => current_user.family, :status => 'new'
      current_user.posts.create :text => "<div class='icon-tasks'></div>&nbsp;<small>#{current_user.name} added <b>#{post}</b> to the <a href='/todo'>TODO list</a></small>", 
 	   :family => current_user.family, :todo => todo
