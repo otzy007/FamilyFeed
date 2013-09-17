@@ -28,6 +28,10 @@
    <td><%= f.date_select :birth, :start_year => 1900, :end_year => Time.now.year %></td>
   </tr>
   <tr>
+   <td><%= f.label :timezone %></td>
+   <td><%= f.time_zone_select  :timezone, nil, :default => 'Eastern Time (US & Canada)' %></td>
+  </tr>
+  <tr>
    <td><%= f.label :invitation %></td>
    <td><%= f.text_field :invitation, :value => @invitation %></td>
   </tr>
