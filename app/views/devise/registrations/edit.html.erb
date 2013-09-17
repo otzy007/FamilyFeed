@@ -32,6 +32,11 @@
    <%= f.label :birth_date %>
    <%= f.date_select :birth, :start_year => 1900, :end_year => Time.now.year %>
   </div>
+  
+  <div>
+   <%= f.label :timezone %>
+   <%= f.time_zone_select  :timezone, nil, :default => (current_user.timezone || 'Eastern Time (US & Canada)') %>
+  </div>
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>

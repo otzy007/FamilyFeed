@@ -20,12 +20,12 @@ class RegistrationsController < Devise::RegistrationsController
    end
    
    def update_sanitized_params
-       devise_parameter_sanitizer.for(:sign_up) do
-	  |u| u.permit(:name, :email, :password, :password_confirmation, :birth)
+       devise_parameter_sanitizer.for(:sign_up) do |u|
+	  u.permit(:name, :email, :password, :password_confirmation, :birth, :timezone)
        end
        
        devise_parameter_sanitizer.for(:account_update) do |u| 
-	  u.permit(:name, :email, :password, :password_confirmation, :current_password, :birth)
+	  u.permit(:name, :email, :password, :password_confirmation, :current_password, :birth, :timezone)
        end
     end
 end
