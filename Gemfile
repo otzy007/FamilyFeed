@@ -13,6 +13,7 @@ gem 'rails', '~> 4.0'
 gem 'gmaps4rails'
 gem 'kaminari' # paginare
 gem "simple_calendar"
+gem 'rapidfire' # feedback
 
 gem 'omniauth'
 gem 'omniauth-facebook'
