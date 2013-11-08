@@ -10,7 +10,7 @@ gem 'rails', '~> 4.0'
 # protected attributes. Trebuie scapat de ele
 # gem 'protected_attributes'
 
-gem 'gmaps4rails'
+gem 'gmaps4rails', '~> 1.5.6'
 gem 'kaminari' # paginare
 gem "simple_calendar"
 
